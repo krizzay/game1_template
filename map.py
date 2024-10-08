@@ -47,7 +47,7 @@ general office.""",
 }
 
 room_office = {
-    "name": "THE GENERAL OFFICE",
+    "name": "the general office",
 
     "description":
     """You are standing next to the cashier's till at

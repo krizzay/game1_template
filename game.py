@@ -76,7 +76,7 @@ def display_room(room):
     # pass # The pass statement does nothing. Replace it with the body of your function.
     
     print()
-    print(room["name"])
+    print(room["name"].upper())
     print()
     print(room["description"])
     print()
@@ -112,6 +112,8 @@ def print_menu_line(direction, leads_to):
     Go SOUTH to MJ and Simon's room.
     """
     pass
+
+    print("Go", direction.upper(), "to", leads_to + ".")
 
 
 def print_menu(exits):
