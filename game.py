@@ -19,7 +19,15 @@ def remove_punct(text):
     """
     pass # The pass statement does nothing. Replace it with the body of your function.
     
-    
+    output = ""
+    for ch in text:
+        if ch in string.punctuation:
+            continue
+        else:
+            output += ch
+
+    return output
+
 def remove_spaces(text):
     """This function is used to remove leading and trailing spaces from a string.
     It takes a string and returns a new string with does not have leading and
@@ -38,6 +46,22 @@ def remove_spaces(text):
     """
     pass
 
+    begin = 0
+    end = len(text)
+
+    for ch in text:
+        if ch == " ":
+            begin += 1
+        else:
+            break
+
+    for ch in reversed(text):
+        if ch == " ":
+            end -= 1
+        else:
+            break
+
+    return text[begin:end]
 
 def normalise_input(user_input):
     """This function removes all punctuation, leading and trailing
@@ -52,6 +76,12 @@ def normalise_input(user_input):
     'help'
     """
     pass
+
+    out = remove_punct(user_input)
+    out = remove_spaces(out)
+    out = out.lower()
+
+    return out
 
     
 def display_room(room):
@@ -95,6 +125,8 @@ def exit_leads_to(exits, direction):
     'Reception'
     """
     pass
+
+    return rooms[exits[direction]]["name"]
     
 
 def print_menu_line(direction, leads_to):
@@ -183,7 +215,7 @@ def menu(exits):
         # COMPLETE THIS PART:
         print_menu(exits)
         # Display menu
-        dir = input("gimme inpus ")
+        dir = input("input: ")
         # Read player's input
 
         # Normalise the input
