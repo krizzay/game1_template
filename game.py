@@ -74,7 +74,6 @@ def display_room(room):
     Note: <BLANKLINE> here means that doctest should expect a blank line.
     """
     # pass # The pass statement does nothing. Replace it with the body of your function.
-    
     print()
     print(room["name"].upper())
     print()
@@ -137,6 +136,9 @@ def print_menu(exits):
     # Iterate over available exits:
     #     and for each exit print the appropriate menu line
 
+    for exit in exits:
+        print_menu_line(exit, exits[exit])
+
     print("Where do you want to go?")
 
 
@@ -158,6 +160,12 @@ def is_valid_exit(exits, user_input):
     """
     pass
 
+    if user_input in exits:
+        return True
+    else:
+        return False
+
+
 
 def menu(exits):
     """This function, given a dictionary of possible exits from a room, prints the
@@ -173,15 +181,16 @@ def menu(exits):
     while True:
         pass
         # COMPLETE THIS PART:
-        
+        print_menu(exits)
         # Display menu
-
+        dir = input("gimme inpus ")
         # Read player's input
 
         # Normalise the input
 
         # Check if the input makes sense (is valid exit)
             # If so, return the player's choice
+        return dir
 
 
 
@@ -200,6 +209,7 @@ def move(exits, direction):
     """
     pass
 
+    return rooms[exits[direction]]
 
 # This is the entry point of our program
 def main():
